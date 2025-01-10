@@ -1,0 +1,41 @@
+# Default configuration settings
+interface:
+  default: "wlan0"
+  monitor_suffix: "mon"
+
+scanning:
+  timeout: 30
+  min_signal_strength: -85
+  max_threads: 4
+  save_results: true
+  results_dir: "scan_results"
+
+attacks:
+  deauth:
+    packets: 10
+    interval: 0.5
+    rate_limit: 5  # packets per second
+  
+  handshake:
+    timeout: 120
+    min_packets: 4
+
+wordlists:
+  default_path: "/usr/share/wordlists/rockyou.txt"
+  formats:
+    - txt
+    - lst
+    - dict
+
+cracking:
+  methods:
+    - aircrack
+    - hashcat
+  max_processes: 2
+  timeout: 3600  # 1 hour
+  gpu_enabled: true
+
+session:
+  save_dir: "sessions"
+  auto_save: true
+  save_interval: 300  # 5 minutes 
